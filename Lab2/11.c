@@ -1,3 +1,21 @@
+/*Given the head of a linked list, remove the nth node from the end of the list and return its head. The operation modifies the linked list so that the nth node from the end is excluded while maintaining the relative order of the remaining nodes.
+Input Format:
+The first line contains an integer n, the position of the node from the end of the list to be removed.
+The second line contains an integer sz, the number of nodes in the linked list.
+The third line contains sz integers, the values of the nodes in the linked list.
+Output Format:
+Print the resulting linked list after removing the nth node from the end, with each value followed by NULL.
+
+Sample Test Case:
+
+Input:
+2
+5
+1 2 3 4 5
+
+Output:
+1 2 3 5 NULL*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

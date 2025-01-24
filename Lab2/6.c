@@ -1,3 +1,10 @@
+/*Given two sorted linked lists of non-negative integers consisting of n and m nodes respectively. The task is to merge both of the lists and print the merged list. You do not have to take count input from the user. Your code should include feature to
+Insert non-negative elements into the first linked list until the user enters “-1”.
+Insert non-negative elements into the second linked list until the user enters “-1”.
+Merge them resulting in a fully sorted linked list, retaining all duplicates.
+Assume that input linked lists are always sorted.
+Don't forget to consider edge cases!.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

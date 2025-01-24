@@ -1,3 +1,28 @@
+/*Problem:
+You are given linked list. Your task is to determine whether the list contains a loop.
+A loop exists if the last node of the linked list points back to any node within the list, creating a cycle.
+
+Input Format:
+
+The first line contains the number of nodes in the linked list.
+
+The second line contains a space-separated list of integers, where each integer represents the data of a node in the linked list.
+
+The third line contains an integer pos, which indicates the index (0-based) of the node where the tail’s next pointer should connect. If pos = -1, the tail’s next pointer is NULL.
+
+Output Format:
+Print true if a loop exists in the linked list.
+Print false if no loop exists.
+
+Sample Test Case:
+Input:
+5
+1 2 3 4 5
+2
+
+Output:
+true
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

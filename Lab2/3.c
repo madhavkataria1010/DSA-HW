@@ -1,3 +1,26 @@
+
+/*You are given n integers. Store these integers in a doubly linked list. Then, determine whether the doubly linked list is a palindrome. If it is not a palindrome, modify the list by changing the values from the last node to the middle node such that the list becomes a palindrome.
+If the list is already a palindrome, print Yes.
+If it is not, print No and the modified palindrome list.
+
+Input Format
+The first line contains a single integer n — the number of elements in the list.
+The second line contains n space-separated integers, representing the elements of the list.
+
+Output Format
+Print Yes if the list is already a palindrome.
+If the list is not a palindrome, print No on the first line, followed by the modified palindrome list on the second line.
+
+Constraints
+0 <= n <= 10^5
+-10^9 <= value <= 10^9
+
+ INPUT 	 	
+ 6
+1 2 3 4 5 6 	
+OUTPUT
+No
+1 2 3 3 2 1 */
 #include <stdio.h>
 #include <stdlib.h>
 

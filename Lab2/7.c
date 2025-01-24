@@ -1,3 +1,28 @@
+/*Given a sorted linked list, implement a function to perform a binary search to find the index of a specified value. If the value is found, return the 1-based index of the node where the value exists. If the value is not found, return -1.
+
+Input Format:
+First line: An integer n, representing the total number of elements in the linked list.
+Second line: n integers representing the sorted values of the linked list.
+Third line: An integer key, representing the value to be searched in the linked list.
+
+Output Format:
+Output a single integer: the 1-based index of the node where the key is located. If the key is not found, output -1.
+
+Sample Test case:
+Input-
+5
+1 2 3 4 5
+3
+Output-
+3
+
+Input-
+4
+2 4 6 8
+5
+Output-
+-1*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

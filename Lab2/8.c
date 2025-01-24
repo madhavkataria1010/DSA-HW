@@ -1,3 +1,26 @@
+/*Problem: Given a linked list, insert a specified number at a given position.
+
+For 0 as input, the output should be NULL not EMPTY
+
+Input Format:
+First line: An integer, n, representing the total number of elements in the linked list.
+Second line: n integers, representing the values of the linked list.
+Third line: An integer, pos, indicating the position before which the new node should be inserted.
+Fourth line: An integer, representing the value of the new node to be inserted.
+
+Output Format:
+Print the resulting linked list after the insertion.
+
+Sample Test Case:
+Input:
+4 
+1 2 3 4  
+1
+7
+
+Output:
+7 1 2 3 4 NULL
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

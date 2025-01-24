@@ -1,3 +1,21 @@
+/*Given an array of elements, insert all the elements in a Linked List in sorted order. The insertion function should be called everytime you add an element to the linked list and it should be implemented in such a way that the inserted element goes to its correct position in the sorted order.
+NOTE : You must NOT sort the array and then create a Linked List.
+
+Input Format :
+First line of the input contains an integer ‘n’, representing the size of the input array.
+Next line contains n integers representing the elements in the array.
+
+Output Format :
+Print the elements in the sorted linked list.
+
+Sample Test Case:
+Input:
+5 
+3 11 9 16 15
+
+Output:
+3 9 11 15 16
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

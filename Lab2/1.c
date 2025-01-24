@@ -1,3 +1,26 @@
+/*Given heads of two linked lists, concatenate the linked lists by connecting both of them. Connect the head of linked list 2 with the last node of linked list 1, i.e. concatenate the linked lists to create one big list. 
+
+If both lists are NULL or 0, then the outcome should be EMPTY.
+
+Input Format:
+First line contains two integers n and m, the lengths of the two linked lists.
+Second line contains n integers, values for linked list 1
+Third line contains m integers, values for linked list 2
+
+Output Format:
+Print the resulting big linked list
+
+
+Sample Test Case:
+Input:
+2 3
+1 2
+3 4 5
+
+Output:
+1 2 3 4 5 NULL
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

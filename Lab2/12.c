@@ -1,3 +1,5 @@
+/*Given a linked list, the task is to reverse the linked list by reversing the links between nodes.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
