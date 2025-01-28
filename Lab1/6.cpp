@@ -1,3 +1,18 @@
+/*Given a matrix M, return the sum of the I path from it. Complete the function isum to implement this functionality.
+Input Format: - First line states the value of N and M, which indicates N*M matrix. (M is odd).
+Followed by N lines each containing M integers. 
+
+
+Example:
+Given, matrix :
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+Output : 39
+Explanation : I shape is formed by top row(1+2+3+4+5) + bottom row(1+2+3+4+5) + middle column(3+3+3) = 15 + 15 + 9 = 39*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

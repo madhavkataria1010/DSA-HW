@@ -1,3 +1,17 @@
+/*Find the number of distinct elements occurring in the intersection of two sorted arrays of size n and m. Example: a = [1,2,3,4,5,6,7,8,9] b = [4,5,6,7,8,9,4,5,6] have [4,5,6,7,8,9] as common. So the output will be 6. 
+Input Format: - First line states the value of N and M. Followed by 2 lines with n and m elements respectively.
+
+Example:
+Input 
+3 2
+4 4 4
+1 0 4
+Output 
+1
+
+Explanation : 
+Intersection array = [4], Hence size = 1*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

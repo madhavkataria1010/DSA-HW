@@ -1,3 +1,17 @@
+/*Given a matrix M, replace the elements of the matrix with the sum of all elements to the right of it (in the same row) and all the elements below it. If no elements are present in its right and bottom, then replace it with 0. You have to write a function compute_matrix(M), which will take array as matrix M and print array matrix described above. 
+
+Input Format - The first line of input will be n , m denoting the rows and columns in the matrix. Next n lines in the input will contain m integers each representing the matrix M.
+
+Output Format - Print the required matrix in the form given in the input, i.e. n rows containing m integers each.
+
+Example Input - 
+2  2 
+1 2
+2 4
+Example Output - 
+8 6
+4 0*/
+
 #include <iostream>
 #include <vector>
 using namespace std;

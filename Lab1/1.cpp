@@ -1,3 +1,28 @@
+/*You are given a matrix of size n x n, which is to be the argument for the function along with the matrix. You are expected to print the sum of the left diagonal and right diagonal of the matrix.
+
+Input:
+1. The first line contain an integer n greater than 1 and less than 100, representing the size of the matrix.
+2. The next n lines contain n integers each, representing the elements of the matrix.
+
+Output:
+Print a single integer which is the sum of left diagonal and right diagonal elements.
+
+Example input
+3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+30
+
+Explanation
+left diagonal: 1 + 5 + 9 = 15
+right diagonal: 3 + 5 + 7 = 15
+total sum = 15 + 15 = 30*/
+
+
+
 #include <iostream>
 #include <vector>
 using namespace std;
