@@ -1,3 +1,23 @@
+/*Complete the function printNewMatrix to remove all the all zero rows and columns from the matrix (assume it to be square matrix of shape nxn) and display the resulting matrix from the function itself. You just have to print the new matrix, hence the return type of the function is void.
+
+Input format : 
+First line contains n.
+Next n lines contain n space-separated integers each, representing the matrix.
+
+Sample Input:
+4
+1 1 0 1
+0 0 0 0
+1 1 0 1
+0 1 0 1
+
+Sample Output: 
+1 1 1
+1 1 1
+0 1 1
+
+Explanation:
+Second row and third column are removed*/
 #include <bits/stdc++.h>
 using namespace std;
 

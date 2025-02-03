@@ -21,7 +21,6 @@ Output
 4 0 0
 7 8 0*/
 
-
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -29,22 +28,38 @@ using namespace std;
 class SquareMatrix {
 private:
     int n;
+    vector<vector<int>> matrix;
 
 public:
     // Constructor to initialize the matrix size
     SquareMatrix(int size) : n(size) {
-        // TODO: Initialize the matrix
-
+        matrix.resize(n, vector<int>(n));
     }
 
     // Method to input matrix elements
     void inputMatrix() {
-        // TODO: Implement input logic
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                cin >> matrix[i][j];
+            }
+        }
     }
 
     // Method to print the lower triangular matrix
     void printLowerTriangularMatrix() const {
-        // TODO: Implement the logic to print the lower triangular matrix
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (i <= j) {
+                    cout << 0;
+                } else {
+                    cout << matrix[i][j];
+                }
+                //if (j < n - 1) {
+                    cout << " ";
+            //    }
+            }
+            cout << endl;
+        }
     }
 };
 
@@ -52,11 +67,9 @@ int main() {
     int n;
     cin >> n;
 
-    // TODO: Create a SquareMatrix object
-
-    // TODO: Input matrix elements
-
-    // TODO: Print the lower triangular matrix
+    SquareMatrix sm(n);
+    sm.inputMatrix();
+    sm.printLowerTriangularMatrix();
 
     return 0;
 }

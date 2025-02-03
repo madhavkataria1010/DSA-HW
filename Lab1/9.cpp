@@ -11,7 +11,6 @@ Example Input -
 Example Output - 
 8 6
 4 0*/
-
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -21,15 +20,19 @@ void compute_matrix(vector<vector<int>>& M) {
     if(n == 0) return;
     int m = M[0].size();
     
+    // Create a matrix to hold the computed values.
     vector<vector<int>> newMatrix(n, vector<int>(m, 0));
     
+    // For each cell in the matrix, compute the sum of elements to its right and below.
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++){
             int sumRight = 0;
+            // Sum the elements to the right of the current element in the same row.
             for (int col = j+1; col < m; col++){
                 sumRight += M[i][col];
             }
             int sumBelow = 0;
+            // Sum all elements in the rows below the current row.
             for (int row = i+1; row < n; row++){
                 for (int col = 0; col < m; col++){
                     sumBelow += M[row][col];
@@ -39,10 +42,12 @@ void compute_matrix(vector<vector<int>>& M) {
         }
     }
     
+    // Print the new matrix in the required output format.
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++){
             cout << newMatrix[i][j];
-            if(j != m - 1) cout << " ";
+            //if(j != m - 1) 
+               cout << " ";
         }
         cout << "\n";
     }
