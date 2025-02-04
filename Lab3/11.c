@@ -20,23 +20,17 @@ Using Stack
 Time Complexity: O(N), where N is the size of the given sequence.
 Auxiliary Space: O(N), since we use a stack to store the sequence. */
 
-
 #include <stdio.h>
 #include <string.h>
 
 #define MAX 100
 
-// Function to compare two strings
-int compare
-
-
 int main() {
-      // Stack to store words
-            // Temporary variable to store each word
-             // Stack pointer
-                    // Number of words
-    
-    // Taking input
+    int n;
+    int top = -1; 
+    char stack[MAX][101]; 
+    char word[101]; 
+
     printf("Enter the number of words: ");
     scanf("%d", &n);
     
@@ -44,16 +38,14 @@ int main() {
     for (int i = 0; i < n; i++) {
         scanf("%s", word);
         
-        // If the stack is not empty and the word matches the top of the stack, pop it
-       
-              // Remove the top word from the stack (they destroy each other)
-        } 
-              // Add the word to the stack
-            
+        if (top >= 0 && strcmp(word, stack[top]) == 0) {
+            top--;
+        } else {
+            top++;
+            strcpy(stack[top], word);
         }
     }
     
-    // The size of the stack represents the remaining words
     printf("Number of words left: %d\n", top + 1);
     
     return 0;

@@ -39,48 +39,74 @@ Input:
 Output:
 Invalid input*/
 
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
+#include <ctype.h>
 
-// Define a node for the linked list stack
-typedef struct Node {
-    int data;
-    struct Node *next;
-} Node;
-
-// Push an element onto the stack
-int push(Node **top, int value) {
-    // Write the code to push an element on the top of the stack
-    
-}
-
-// Pop an element from the stack
-int pop(Node **top, int *value) {
-    // Write the code to pop an element from the top of the stack
-}
-
-// Evaluate postfix expression
-int evaluatePostfix(const char *expression, int *result) {
-    // Write the code to evaluate the postfix expression her 
-}
+#define MAX_SIZE 100
 
 int main() {
-    char expression[200];
-    int result;
-
-    fgets(expression, sizeof(expression), stdin);
-
-    // Remove trailing newline character
-    expression[strcspn(expression, "\n")] = '\0';
-
-    if (evaluatePostfix(expression, &result)) {
-        printf("%d\n", result);
-    } else {
+    char input[512];
+    
+    if (!fgets(input, sizeof(input), stdin)) {
         printf("Invalid input\n");
+        return 0;
     }
-
+    
+    int stack[MAX_SIZE];
+    int top = -1;
+    
+    char *token = strtok(input, " \n");
+    while (token != NULL) {
+        if (isdigit(token[0])) {
+            char *endptr;
+            long num = strtol(token, &endptr, 10);
+            if (*endptr != '\0') {
+                printf("Invalid input\n");
+                return 0;
+            }
+            if (top >= MAX_SIZE - 1) {
+                printf("Invalid input\n");
+                return 0;
+            }
+            stack[++top] = (int)num;
+        }
+        else if (strlen(token) == 1 && (token[0] == '+' || token[0] == '-' || token[0] == '*' || token[0] == '/')) {
+            if (top < 1) {
+                printf("Invalid input\n");
+                return 0;
+            }
+            int b = stack[top--];
+            int a = stack[top--];
+            if (token[0] == '/' && b == 0) {
+                printf("Invalid input\n");
+                return 0;
+            }
+            int result;
+            switch (token[0]) {
+                case '+': result = a + b; break;
+                case '-': result = a - b; break;
+                case '*': result = a * b; break;
+                case '/': result = a / b; break;
+                default:
+                    printf("Invalid input\n");
+                    return 0;
+            }
+            stack[++top] = result;
+        }
+        else {
+            printf("Invalid input\n");
+            return 0;
+        }
+        token = strtok(NULL, " \n");
+    }
+    
+    if (top != 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+    
+    printf("%d\n", stack[top]);
     return 0;
 }
