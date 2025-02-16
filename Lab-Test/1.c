@@ -1,3 +1,11 @@
+/*
+Implement a C program using a queue with a linked list to find and print the length of the longest consecutive sequence of 1s in the array.
+Example
+10
+1 1 0 1 1 1 0 1 1 1
+Output : 3
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
