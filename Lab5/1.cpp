@@ -1,5 +1,5 @@
 /*
-WAP to implement the insertion of nodes into an AVL tree and check whether the resulting tree is a valid AVL tree. 
+WAP to implement the insertion of nodes into an AVL tree and check whether the resulting tree is a valid AVL tree.
 Your main program should take the following input:
 The number of nodes n to be inserted into the AVL tree. n integers representing the data of each node to be inserted.
 
@@ -10,7 +10,7 @@ input:
 3
 2 1 3
 output :
-2 1 3 
+2 1 3
 True
 */
 #include <iostream>
@@ -19,14 +19,16 @@ True
 using namespace std;
 
 // Class for AVL Tree Node
-class Node {
+class Node
+{
 public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
     // Constructor to initialize a new AVL tree node
-    Node(int value) {
+    Node(int value)
+    {
         data = value;
         left = nullptr;
         right = nullptr;
@@ -34,21 +36,24 @@ public:
 };
 
 // Function to get the height of a node
-int getHeight(Node* node) {
+int getHeight(Node *node)
+{
     if (!node)
         return 0;
     return max(getHeight(node->left), getHeight(node->right)) + 1;
 }
 
 // Function to create a new AVL tree node
-Node* createNode(int data) {
+Node *createNode(int data)
+{
     return new Node(data);
 }
 
 // Function to right rotate subtree rooted with y
-Node* rightRotate(Node* y) {
-    Node* x = y->left;
-    Node* T2 = x->right;
+Node *rightRotate(Node *y)
+{
+    Node *x = y->left;
+    Node *T2 = x->right;
 
     // Perform rotation
     x->right = y;
@@ -58,9 +63,10 @@ Node* rightRotate(Node* y) {
 }
 
 // Function to left rotate subtree rooted with x
-Node* leftRotate(Node* x) {
-    Node* y = x->right;
-    Node* T2 = y->left;
+Node *leftRotate(Node *x)
+{
+    Node *y = x->right;
+    Node *T2 = y->left;
 
     // Perform rotation
     y->left = x;
@@ -70,14 +76,16 @@ Node* leftRotate(Node* x) {
 }
 
 // Get Balance factor of node N
-int getBalance(Node* N) {
+int getBalance(Node *N)
+{
     if (!N)
         return 0;
     return getHeight(N->left) - getHeight(N->right);
 }
 
 // Function to insert a node in AVL tree and balance the tree
-Node* insert(Node* node, int data) {
+Node *insert(Node *node, int data)
+{
     // Standard BST insertion
     if (node == nullptr)
         return createNode(data);
@@ -101,13 +109,15 @@ Node* insert(Node* node, int data) {
         return leftRotate(node);
 
     // Left Right Case
-    if (balance > 1 && data > node->left->data) {
+    if (balance > 1 && data > node->left->data)
+    {
         node->left = leftRotate(node->left);
         return rightRotate(node);
     }
 
     // Right Left Case
-    if (balance < -1 && data < node->right->data) {
+    if (balance < -1 && data < node->right->data)
+    {
         node->right = rightRotate(node->right);
         return leftRotate(node);
     }
@@ -116,7 +126,8 @@ Node* insert(Node* node, int data) {
 }
 
 // Function to check if a tree is a valid AVL tree
-bool isValidAVL(Node* root) {
+bool isValidAVL(Node *root)
+{
     if (!root)
         return true;
 
@@ -128,7 +139,8 @@ bool isValidAVL(Node* root) {
 }
 
 // Function to perform preorder traversal of the AVL tree
-void preorderTraversal(Node* root) {
+void preorderTraversal(Node *root)
+{
     if (!root)
         return;
     cout << root->data << " ";
@@ -136,13 +148,14 @@ void preorderTraversal(Node* root) {
     preorderTraversal(root->right);
 }
 
-
-int main() {
+int main()
+{
     int n;
     cin >> n;
-    Node* root = nullptr;
+    Node *root = nullptr;
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         int data;
         cin >> data;
         root = insert(root, data);
@@ -151,10 +164,12 @@ int main() {
     preorderTraversal(root);
     cout << endl;
 
-    if (isValidAVL(root)) {
+    if (isValidAVL(root))
+    {
         cout << "True" << endl;
-    } 
-    else {
+    }
+    else
+    {
         cout << "False" << endl;
     }
 
